@@ -1,4 +1,4 @@
 What is BlazeGeekCash?
 ----------------
 
-[BlazeGeekCash](https://www.blazegeek.com) is a new test digital currency, based on GeekCash. 
+[BlazeGeekCash](https://github.com/blazegeek/blazegeekcash) is a new test digital currency, based on GeekCash. 
