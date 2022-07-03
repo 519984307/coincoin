@@ -1,23 +1,23 @@
 dnl require autoconf 2.60 (AS_ECHO/AS_ECHO_N)
 AC_PREREQ([2.60])
-define(_CLIENT_VERSION_MAJOR, 1)
-define(_CLIENT_VERSION_MINOR, 3)
+define(_CLIENT_VERSION_MAJOR, 0)
+define(_CLIENT_VERSION_MINOR, 0)
 define(_CLIENT_VERSION_REVISION, 0)
 define(_CLIENT_VERSION_BUILD, 1)
 define(_CLIENT_VERSION_IS_RELEASE, true)
-define(_COPYRIGHT_YEAR, 2019)
+define(_COPYRIGHT_YEAR, 2022)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
-define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[GeekCash]])
-AC_INIT([GeekCash],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/geekcash/geek/issues],[geekcash],[https://geekcash.org/])
+define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[BlazeGeekCash]])
+AC_INIT([BlazeGeekCash],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/blazegeek/blazegeekcash/issues],[blazegeekcash],[https://www.blazegeek.com/])
 AC_CONFIG_SRCDIR([src/validation.cpp])
 AC_CONFIG_HEADERS([src/config/geekcash-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
-BITCOIN_DAEMON_NAME=geekcashd
-BITCOIN_GUI_NAME=geekcash-qt
-BITCOIN_CLI_NAME=geekcash-cli
-BITCOIN_TX_NAME=geekcash-tx
+BITCOIN_DAEMON_NAME=blazegeekcashd
+BITCOIN_GUI_NAME=blazegeekcash-qt
+BITCOIN_CLI_NAME=blazegeekcash-cli
+BITCOIN_TX_NAME=blazegeekcash-tx
 
 AC_CANONICAL_HOST
 
