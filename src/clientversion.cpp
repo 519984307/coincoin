@@ -18,8 +18,9 @@ const std::string CLIENT_NAME("BlazeGeekCash");
 /**
  * Client version number
  */
-#define CLIENT_VERSION_SUFFIX "-rc0"
+#define CLIENT_VERSION_SUFFIX ""
 
+#define BUILD_RC true
 
 /**
  * The following part of the code determines the CLIENT_BUILD variable.
@@ -48,6 +49,9 @@ const std::string CLIENT_NAME("BlazeGeekCash");
 #define GIT_COMMIT_DATE "$Format:%cD$"
 #endif
 
+#define BUILD_DESC_WITH_RC(maj, min, rev, rc, build, commit)
+		"v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev) "-rc" DO_STRINGIZE(rc) "." DO_STRINGIZE(build) "-g" commit
+
 #define BUILD_DESC_WITH_SUFFIX(maj, min, rev, build, suffix) \
     "v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev) "." DO_STRINGIZE(build) "-" DO_STRINGIZE(suffix)
 
@@ -56,6 +60,10 @@ const std::string CLIENT_NAME("BlazeGeekCash");
 
 #define BUILD_DESC_FROM_UNKNOWN(maj, min, rev, build) \
     "v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev) "." DO_STRINGIZE(build) "-unk"
+
+#ifdef BUILD_RC
+#define BUILD_DESC BUILD_DESC_WITH_RC(CLIENT_VERSION_MAJOR, CLIENT_VERSION_MINOR, CLIENT_VERSION_REVISION, CLIENT_VERSION_RELEASE_CANDIDATE, CLIENT_VERSION_BUILD, GIT_COMMIT_ID)
+#endif
 
 #ifndef BUILD_DESC
 #ifdef BUILD_SUFFIX
