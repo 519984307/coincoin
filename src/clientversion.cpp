@@ -49,8 +49,11 @@ const std::string CLIENT_NAME("BlazeGeekCash");
 #define GIT_COMMIT_DATE "$Format:%cD$"
 #endif
 
-#define BUILD_DESC_WITH_RC(maj, min, rev, rc, build) \
-    "v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev) "-rc" DO_STRINGIZE(rc) "." DO_STRINGIZE(build)
+#define BUILD_DESC_WITH_RC(maj, min, rev, rcnum, build) \
+    "v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev) "-rc" DO_STRINGIZE(rcnum) "." DO_STRINGIZE(build)
+
+#define BUILD_DESC_WITH_RC_FROM_COMMIT(maj, min, rev, rcnum, build, commit) \
+    "v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev) "-rc" DO_STRINGIZE(rcnum) "." DO_STRINGIZE(build) "-" commit
 
 #define BUILD_DESC_WITH_SUFFIX(maj, min, rev, build, suffix) \
     "v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev) "." DO_STRINGIZE(build) "-" DO_STRINGIZE(suffix)
@@ -62,7 +65,11 @@ const std::string CLIENT_NAME("BlazeGeekCash");
     "v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev) "." DO_STRINGIZE(build) "-unk"
 
 #ifdef BUILD_RC
+#if defined(GIT_COMMIT_ID)
+#define BUILD_DESC BUILD_DESC_WITH_RC_FROM_COMMIT(CLIENT_VERSION_MAJOR, CLIENT_VERSION_MINOR, CLIENT_VERSION_REVISION, CLIENT_VERSION_RELEASE_CANDIDATE, CLIENT_VERSION_BUILD, GIT_COMMIT_ID)
+#else
 #define BUILD_DESC BUILD_DESC_WITH_RC(CLIENT_VERSION_MAJOR, CLIENT_VERSION_MINOR, CLIENT_VERSION_REVISION, CLIENT_VERSION_RELEASE_CANDIDATE, CLIENT_VERSION_BUILD)
+#endif
 #endif
 
 #ifndef BUILD_DESC
