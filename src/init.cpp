@@ -649,7 +649,7 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/blazegeek/blazegeekcash>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/blazegeek/coincoin>";
     const std::string URL_WEBSITE = "<https://www.blazegeek.com>";
 
     return CopyrightHolders(_("Copyright (C)"), 2022, COPYRIGHT_YEAR) + "\n" +

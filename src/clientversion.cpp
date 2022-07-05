@@ -13,7 +13,7 @@
  * for both geekcashd and geekcash-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("BlazeGeekCash");
+const std::string CLIENT_NAME("CoinCoin");
 
 /**
  * Client version number

@@ -1,4 +1,4 @@
-Source: blazegeekcash
+Source: coincoin
 Section: utils
 Priority: optional
 Maintainer: Hunter David <hunter@blazegeek.com>
@@ -27,8 +27,8 @@ Build-Depends: debhelper,
  libzmq3-dev
 Standards-Version: 3.9.2
 Homepage: https://www.blazegeek.com/
-Vcs-Git: git://github.com/blazegeek/blazegeekcash.git
-Vcs-Browser: https://github.com/blazegeek/blazegeekcash
+Vcs-Git: git://github.com/blazegeek/coincoin.git
+Vcs-Browser: https://github.com/blazegeek/bcoincoin
 
 Package: geekcashd
 Architecture: any
