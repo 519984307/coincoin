@@ -37,7 +37,6 @@ The following are developer notes on how to build GeekCash on your native platfo
 - [Unix Build Notes](build-unix.md)
 - [Windows Build Notes](build-windows.md)
 - [OpenBSD Build Notes](build-openbsd.md)
-- [Gitian Building Guide](gitian-building.md)
 
 Development
 ---------------------
