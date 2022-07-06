@@ -15,7 +15,7 @@ To install:
 
 If you build yourself, you will either need to modify the paths in
 the .desktop file or copy or symlink your geekcash-qt binary to `/usr/bin`
-and the `../../share/pixmaps/geekcash128.png` to `/usr/share/pixmaps`
+and the `../../share/pixmaps/logo128.png` to `/usr/share/pixmaps`
 
 geekcash-qt.protocol (KDE)
 

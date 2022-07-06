@@ -8,6 +8,6 @@ Comment[tr]=GeekCash, eşten eşe kriptografik sanal para birimi
 Exec=geekcash-qt %u
 Terminal=false
 Type=Application
-Icon=geekcash128
+Icon=logo128
 MimeType=x-scheme-handler/geekcash;
 Categories=Office;Finance;
