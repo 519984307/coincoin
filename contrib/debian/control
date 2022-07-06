@@ -28,7 +28,7 @@ Build-Depends: debhelper,
 Standards-Version: 3.9.2
 Homepage: https://www.blazegeek.com/
 Vcs-Git: git://github.com/blazegeek/coincoin.git
-Vcs-Browser: https://github.com/blazegeek/bcoincoin
+Vcs-Browser: https://github.com/blazegeek/coincoin
 
 Package: geekcashd
 Architecture: any
