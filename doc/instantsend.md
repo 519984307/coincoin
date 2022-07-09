@@ -11,10 +11,6 @@ When a "Transaction Lock" occurs the hash of the related transaction is broadcas
 * `zmqpubrawtxlock`: publishes the raw transaction when locked via InstantSend
 * `zmqpubhashtxlock`: publishes the transaction hash when locked via InstantSend
 
-This mechanism has been integrated into Bitcore-Node-GeekCash which allows for notification to be broadcast through Insight API in one of two ways:
-* WebSocket: [https://github.com/geekcashpay/insight-api-geekcash#web-socket-api](https://github.com/geekcashpay/insight-api-geekcash#web-socket-api)
-* API: [https://github.com/geekcashpay/insight-api-geekcash#instantsend-transactions](https://github.com/geekcashpay/insight-api-geekcash#instantsend-transactions)
-
 #### Command line option
 
 When a wallet InstantSend transaction is successfully locked a shell command provided in this option is executed (`%s` in `<cmd>` is replaced by TxID):

@@ -33,37 +33,37 @@ Follow the instructions in [build-generic](build-generic.md)
 Running
 -------
 
-GeekCash is now available at `./src/geekcashd`
+CoinCoin is now available at `./src/coincoind`
 
 Before running, it's recommended you create an RPC configuration file.
 
-    echo -e "rpcuser=geekcashrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/GeekCash/coincoin.conf"
+    echo -e "rpcuser=coincoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/CoinCoin/coincoin.conf"
 
-    chmod 600 "/Users/${USER}/Library/Application Support/GeekCash/coincoin.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/CoinCoin/coincoin.conf"
 
-The first time you run geekcashd, it will start downloading the blockchain. This process could take several hours.
+The first time you run coincoind, it will start downloading the blockchain. This process could take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 
-    tail -f $HOME/Library/Application\ Support/GeekCash/debug.log
+    tail -f $HOME/Library/Application\ Support/CoinCoin/debug.log
 
 Other commands:
 -------
 
-    ./src/geekcashd -daemon # Starts the geekcash daemon.
-    ./src/geekcash-cli --help # Outputs a list of command-line options.
-    ./src/geekcash-cli help # Outputs a list of RPC commands when the daemon is running.
+    ./src/coincoind -daemon # Starts the coincoin daemon.
+    ./src/coincoin-cli --help # Outputs a list of command-line options.
+    ./src/coincoin-cli help # Outputs a list of RPC commands when the daemon is running.
 
 Using Qt Creator as IDE
 ------------------------
-You can use Qt Creator as an IDE, for geekcash development.
+You can use Qt Creator as an IDE, for coincoin development.
 Download and install the community edition of [Qt Creator](https://www.qt.io/download/).
 Uncheck everything except Qt Creator during the installation process.
 
 1. Make sure you installed everything through Homebrew mentioned above
 2. Do a proper ./configure --enable-debug
 3. In Qt Creator do "New Project" -> Import Project -> Import Existing Project
-4. Enter "geekcash-qt" as project name, enter src/qt as location
+4. Enter "coincoin-qt" as project name, enter src/qt as location
 5. Leave the file selection as it is
 6. Confirm the "summary page"
 7. In the "Projects" tab select "Manage Kits..."

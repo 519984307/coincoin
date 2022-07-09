@@ -16,9 +16,9 @@ Create a new wallet address for each Masternode.
 
 Close your QT Wallet.
 
-### Send 100K GEEK to New Addresses
+### Send 100K COIN to New Addresses
 
-Send exactly 100K GEEK to each new address created above.
+Send exactly 100K COIN to each new address created above.
 
 ### Create New Masternode Private Keys
 
@@ -38,9 +38,9 @@ Remember... this is local. Make sure your QT is not running.
 
 Create the `masternode.conf` file in the same directory as your `wallet.dat`.
 
-Copy the masternode private key and correspondig collateral output transaction that holds the 100K GEEK.
+Copy the masternode private key and correspondig collateral output transaction that holds the 100K COIN.
 
-*Note: The masternode priviate key is **not** the same as a wallet private key. **Never** put your wallet private key in the masternode.conf file. That is almost equivalent to putting your 100K GEEK on the remote server and defeats the purpose of a hot/cold setup.*
+*Note: The masternode priviate key is **not** the same as a wallet private key. **Never** put your wallet private key in the masternode.conf file. That is almost equivalent to putting your 100K COIN on the remote server and defeats the purpose of a hot/cold setup.*
 
 ### Get the collateral output
 
@@ -74,7 +74,7 @@ If you generated a new masternode private key, you will need to update the remot
 
 Shut down the daemon and then edit the file.
 
-```nano .geekcash/coincoin.conf```
+```nano .coincoin/coincoin.conf```
 
 ### Edit the masternodeprivkey
 If you generated a new masternode private key, you will need to update the `masternodeprivkey` value in your remote `coincoin.conf` file.
@@ -87,7 +87,7 @@ If your remote server is not running, start your remote daemon as you normally w
 
 You can confirm that remote server is on the correct block by issuing
 
-```geekcash-cli getinfo```
+```coincoin-cli getinfo```
 
 and comparing with the official explorer at https://explorer.blazegeek.com
 
@@ -116,18 +116,12 @@ Example ```masternode start-alias mn01```
 Issue command `masternode status`
 It should return you something like that:
 ```
-geekcash-cli masternode status
+coincoin-cli masternode status
 {
     "outpoint" : "<collateral_output>-<collateral_output_index>",
     "service" : "<ipaddress>:<port>",
-    "pubkey" : "<100K GEEK address>",
+    "pubkey" : "<100K COIN address>",
     "status" : "Masternode successfully started"
 }
 ```
 Command output should have "_Masternode successfully started_" in its `status` field now. If it says "_not capable_" instead, you should check your config again.
-
-### Local
-
-Search your Masternodes on https://geekcashninja.pl/masternodes.html
-
-_Hint: Bookmark it, you definitely will be using this site a lot._

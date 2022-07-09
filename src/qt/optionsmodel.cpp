@@ -1,11 +1,12 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2022      The CoinCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/geekcash-config.h"
+#include "config/coincoin-config.h"
 #endif
 
 #include "optionsmodel.h"
@@ -76,7 +77,7 @@ void OptionsModel::Init(bool resetSettings)
 
     // Display
     if (!settings.contains("nDisplayUnit"))
-        settings.setValue("nDisplayUnit", BitcoinUnits::GEEK);
+        settings.setValue("nDisplayUnit", BitcoinUnits::COIN);
     nDisplayUnit = settings.value("nDisplayUnit").toInt();
 
     // if (!settings.contains("strThirdPartyTxUrls"))
@@ -84,8 +85,8 @@ void OptionsModel::Init(bool resetSettings)
     // strThirdPartyTxUrls = settings.value("strThirdPartyTxUrls", "").toString();
 
     if (!settings.contains("strThirdPartyTxUrls"))
-        settings.setValue("strThirdPartyTxUrls", "https://explorer.geekcash.org/tx/%s");
-    strThirdPartyTxUrls = settings.value("strThirdPartyTxUrls", "https://explorer.geekcash.org/tx/%s").toString();
+        settings.setValue("strThirdPartyTxUrls", "https://explorer.blazegeek.com/tx/%s");
+    strThirdPartyTxUrls = settings.value("strThirdPartyTxUrls", "https://explorer.blazegeek.com/tx/%s").toString();
 
     if (!settings.contains("theme"))
         settings.setValue("theme", "");
@@ -148,10 +149,10 @@ void OptionsModel::Init(bool resetSettings)
 
     if (!settings.contains("nPrivateSendAmount")) {
         // for migration from old settings
-        if (!settings.contains("nAnonymizeGeekCashAmount"))
+        if (!settings.contains("nAnonymizeCoinCoinAmount"))
             settings.setValue("nPrivateSendAmount", DEFAULT_PRIVATESEND_AMOUNT);
         else
-            settings.setValue("nPrivateSendAmount", settings.value("nAnonymizeGeekCashAmount").toInt());
+            settings.setValue("nPrivateSendAmount", settings.value("nAnonymizeCoinCoinAmount").toInt());
     }
     if (!SoftSetArg("-privatesendamount", settings.value("nPrivateSendAmount").toString().toStdString()))
         addOverriddenOption("-privatesendamount");
@@ -210,7 +211,7 @@ void OptionsModel::Reset()
 
     // Remove all entries from our QSettings object
     settings.clear();
-    resetSettings = true; // Needed in geekcash.cpp during shotdown to also remove the window positions
+    resetSettings = true; // Needed in coincoin.cpp during shotdown to also remove the window positions
 
     // default setting for OptionsModel::StartAtStartup - disabled
     if (GUIUtil::GetStartOnSystemStartup())

@@ -1,9 +1,10 @@
-// Copyright (c) 2018 The Dash Core developers
+// Copyright (c) 2018      The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2022      The CoinCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "test/test_geekcash.h"
+#include "test/test_coincoin.h"
 
 #include "bls/bls.h"
 #include "evo/simplifiedmns.h"

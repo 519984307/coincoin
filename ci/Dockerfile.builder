@@ -28,8 +28,8 @@ ARG GROUP_ID=1000
 # add user with specified (or default) user/group ids
 ENV USER_ID ${USER_ID}
 ENV GROUP_ID ${GROUP_ID}
-RUN groupadd -g ${GROUP_ID} geekcash
-RUN useradd -u ${USER_ID} -g geekcash -s /bin/bash -m -d /geekcash geekcash
+RUN groupadd -g ${GROUP_ID} coincoin
+RUN useradd -u ${USER_ID} -g coincoin -s /bin/bash -m -d /coincoin coincoin
 
 # Extra packages
 ARG BUILD_TARGET=linux64
@@ -47,13 +47,13 @@ RUN \
   update-alternatives --set x86_64-w64-mingw32-g++  /usr/bin/x86_64-w64-mingw32-g++-posix; \
   exit 0
 
-RUN mkdir /geekcash-src && \
+RUN mkdir /coincoin-src && \
   mkdir -p /cache/ccache && \
   mkdir /cache/depends && \
   mkdir /cache/sdk-sources && \
-  chown $USER_ID:$GROUP_ID /geekcash-src && \
+  chown $USER_ID:$GROUP_ID /coincoin-src && \
   chown $USER_ID:$GROUP_ID /cache && \
   chown $USER_ID:$GROUP_ID /cache -R
-WORKDIR /geekcash-src
+WORKDIR /coincoin-src
 
-USER geekcash
+USER coincoin

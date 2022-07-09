@@ -1,4 +1,4 @@
 #!/bin/bash
-# use testnet settings,  if you need mainnet,  use ~/.geekcash/geekcashd.pid file instead
-geekcash_pid=$(<~/.geekcash/testnet3/geekcashd.pid)
-sudo gdb -batch -ex "source debug.gdb" geekcashd ${geekcash_pid}
+# use testnet settings,  if you need mainnet,  use ~/.coincoin/coincoind.pid file instead
+coincoin_pid=$(<~/.coincoin/testnet3/coincoind.pid)
+sudo gdb -batch -ex "source debug.gdb" coincoind ${coincoin_pid}

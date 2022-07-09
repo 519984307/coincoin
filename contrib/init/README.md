@@ -1,11 +1,11 @@
 Sample configuration files for:
 
-SystemD: geekcashd.service
-Upstart: geekcashd.conf
-OpenRC:  geekcashd.openrc
-         geekcashd.openrcconf
-CentOS:  geekcashd.init
-OS X:    org.geekcash.geekcashd.plist
+SystemD: coincoind.service
+Upstart: coincoind.conf
+OpenRC:  coincoind.openrc
+         coincoind.openrcconf
+CentOS:  coincoind.init
+OS X:    org.coincoin.coincoind.plist
 
 have been made available to assist packagers in creating node packages here.
 

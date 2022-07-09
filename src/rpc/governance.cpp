@@ -1,9 +1,10 @@
 // Copyright (c) 2014-2017 The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2022      The CoinCoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-//#define ENABLE_GEEKCASH_DEBUG
+//#define ENABLE_COINCOIN_DEBUG
 
 #include "activemasternode.h"
 #include "consensus/validation.h"
@@ -170,9 +171,9 @@ UniValue gobject_prepare(const JSONRPCRequest& request)
 
     CGovernanceObject govobj(hashParent, nRevision, nTime, uint256(), strDataHex);
 
-    // This command is dangerous because it consumes 5 GEEK irreversibly.
+    // This command is dangerous because it consumes 5 COIN irreversibly.
     // If params are lost, it's very hard to bruteforce them and yet
-    // users ignore all instructions on geekcashcentral etc. and do not save them...
+    // users ignore all instructions on coincoincentral etc. and do not save them...
     // Let's log them here and hope users do not mess with debug.log
     LogPrintf("gobject_prepare -- params: %s %s %s %s, data: %s, hash: %s\n",
                 request.params[1].get_str(), request.params[2].get_str(),
@@ -1230,11 +1231,11 @@ UniValue getsuperblockbudget(const JSONRPCRequest& request)
 static const CRPCCommand commands[] =
 { //  category              name                      actor (function)         okSafe argNames
   //  --------------------- ------------------------  -----------------------  ------ ----------
-    /* GeekCash features */
-    { "geekcash",               "getgovernanceinfo",      &getgovernanceinfo,      true,  {} },
-    { "geekcash",               "getsuperblockbudget",    &getsuperblockbudget,    true,  {"index"} },
-    { "geekcash",               "gobject",                &gobject,                true,  {} },
-    { "geekcash",               "voteraw",                &voteraw,                true,  {} },
+    /* CoinCoin features */
+    { "coincoin",           "getgovernanceinfo",      &getgovernanceinfo,      true,  {} },
+    { "coincoin",           "getsuperblockbudget",    &getsuperblockbudget,    true,  {"index"} },
+    { "coincoin",           "gobject",                &gobject,                true,  {} },
+    { "coincoin",           "voteraw",                &voteraw,                true,  {} },
 
 };
 

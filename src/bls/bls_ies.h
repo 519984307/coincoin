@@ -1,10 +1,11 @@
 // Copyright (c) 2018 The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2022      The CoinCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GEEKCASH_CRYPTO_BLS_IES_H
-#define GEEKCASH_CRYPTO_BLS_IES_H
+#ifndef COINCOIN_CRYPTO_BLS_IES_H
+#define COINCOIN_CRYPTO_BLS_IES_H
 
 #include "bls.h"
 #include "streams.h"
@@ -162,4 +163,4 @@ public:
     }
 };
 
-#endif // GEEKCASH_CRYPTO_BLS_IES_H
+#endif // COINCOIN_CRYPTO_BLS_IES_H

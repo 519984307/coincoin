@@ -143,7 +143,7 @@ public:
 };
 
 /**
- * GeekCash RPC command dispatcher.
+ * CoinCoin RPC command dispatcher.
  */
 class CRPCTable
 {

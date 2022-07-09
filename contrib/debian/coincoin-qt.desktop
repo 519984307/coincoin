@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=CoinCoin
+Comment=CoinCoin P2P Cryptocurrency
+Exec=coincoin-qt %u
+Terminal=false
+Type=Application
+Icon=logo128
+MimeType=x-scheme-handler/coincoin;
+Categories=Office;Finance;

@@ -1,36 +1,36 @@
-Sample init scripts and service configuration for geekcashd
+Sample init scripts and service configuration for coincoind
 ==========================================================
 
 Sample scripts and configuration files for systemd, Upstart and OpenRC
 can be found in the contrib/init folder.
 
-    contrib/init/geekcashd.service:    systemd service unit configuration
-    contrib/init/geekcashd.openrc:     OpenRC compatible SysV style init script
-    contrib/init/geekcashd.openrcconf: OpenRC conf.d file
-    contrib/init/geekcashd.conf:       Upstart service configuration file
-    contrib/init/geekcashd.init:       CentOS compatible SysV style init script
+    contrib/init/coincoind.service:    systemd service unit configuration
+    contrib/init/coincoind.openrc:     OpenRC compatible SysV style init script
+    contrib/init/coincoind.openrcconf: OpenRC conf.d file
+    contrib/init/coincoind.conf:       Upstart service configuration file
+    contrib/init/coincoind.init:       CentOS compatible SysV style init script
 
 1. Service User
 ---------------------------------
 
-All three Linux startup configurations assume the existence of a "geekcash" user
+All three Linux startup configurations assume the existence of a "coincoin" user
 and group.  They must be created before attempting to use these scripts.
-The OS X configuration assumes geekcashd will be set up for the current user.
+The OS X configuration assumes coincoind will be set up for the current user.
 
 2. Configuration
 ---------------------------------
 
-At a bare minimum, geekcashd requires that the rpcpassword setting be set
+At a bare minimum, coincoind requires that the rpcpassword setting be set
 when running as a daemon.  If the configuration file does not exist or this
-setting is not set, geekcashd will shutdown promptly after startup.
+setting is not set, coincoind will shutdown promptly after startup.
 
 This password does not have to be remembered or typed as it is mostly used
-as a fixed token that geekcashd and client programs read from the configuration
+as a fixed token that coincoind and client programs read from the configuration
 file, however it is recommended that a strong and secure password be used
 as this password is security critical to securing the wallet should the
 wallet be enabled.
 
-If geekcashd is run with the "-server" flag (set by default), and no rpcpassword is set,
+If coincoind is run with the "-server" flag (set by default), and no rpcpassword is set,
 it will use a special cookie file for authentication. The cookie is generated with random
 content when the daemon starts, and deleted when it exits. Read access to this file
 controls who can access it through RPC.
@@ -38,7 +38,7 @@ controls who can access it through RPC.
 By default the cookie is stored in the data directory, but it's location can be overridden
 with the option '-rpccookiefile'.
 
-This allows for running geekcashd without having to do any manual configuration.
+This allows for running coincoind without having to do any manual configuration.
 
 `conf`, `pid`, and `wallet` accept relative paths which are interpreted as
 relative to the data directory. `wallet` *only* supports relative paths.
@@ -53,24 +53,24 @@ see `contrib/debian/examples/coincoin.conf`.
 
 All three configurations assume several paths that might need to be adjusted.
 
-Binary:              `/usr/bin/geekcashd`  
-Configuration file:  `/etc/geekcash/coincoin.conf`  
-Data directory:      `/var/lib/geekcashd`  
-PID file:            `/var/run/geekcashd/geekcashd.pid` (OpenRC and Upstart) or `/var/lib/geekcashd/geekcashd.pid` (systemd)  
-Lock file:           `/var/lock/subsys/geekcashd` (CentOS)  
+Binary:              `/usr/bin/coincoind`  
+Configuration file:  `/etc/coincoin/coincoin.conf`  
+Data directory:      `/var/lib/coincoind`  
+PID file:            `/var/run/coincoind/coincoind.pid` (OpenRC and Upstart) or `/var/lib/coincoind/coincoind.pid` (systemd)  
+Lock file:           `/var/lock/subsys/coincoind` (CentOS)  
 
 The configuration file, PID directory (if applicable) and data directory
-should all be owned by the geekcash user and group.  It is advised for security
+should all be owned by the coincoin user and group.  It is advised for security
 reasons to make the configuration file and data directory only readable by the
-geekcash user and group.  Access to geekcash-cli and other geekcashd rpc clients
+coincoin user and group.  Access to coincoin-cli and other coincoind rpc clients
 can then be controlled by group membership.
 
 3b) Mac OS X
 
-Binary:              `/usr/local/bin/geekcashd`  
-Configuration file:  `~/Library/Application Support/GeekCash/coincoin.conf`  
-Data directory:      `~/Library/Application Support/GeekCash`
-Lock file:           `~/Library/Application Support/GeekCash/.lock`
+Binary:              `/usr/local/bin/coincoind`  
+Configuration file:  `~/Library/Application Support/CoinCoin/coincoin.conf`  
+Data directory:      `~/Library/Application Support/CoinCoin`
+Lock file:           `~/Library/Application Support/CoinCoin/.lock`
 
 4. Installing Service Configuration
 -----------------------------------
@@ -81,19 +81,19 @@ Installing this .service file consists of just copying it to
 /usr/lib/systemd/system directory, followed by the command
 `systemctl daemon-reload` in order to update running systemd configuration.
 
-To test, run `systemctl start geekcashd` and to enable for system startup run
-`systemctl enable geekcashd`
+To test, run `systemctl start coincoind` and to enable for system startup run
+`systemctl enable coincoind`
 
 4b) OpenRC
 
-Rename geekcashd.openrc to geekcashd and drop it in /etc/init.d.  Double
+Rename coincoind.openrc to coincoind and drop it in /etc/init.d.  Double
 check ownership and permissions and make it executable.  Test it with
-`/etc/init.d/geekcashd start` and configure it to run on startup with
-`rc-update add geekcashd`
+`/etc/init.d/coincoind start` and configure it to run on startup with
+`rc-update add coincoind`
 
 4c) Upstart (for Debian/Ubuntu based distributions)
 
-Drop geekcashd.conf in /etc/init.  Test by running `service geekcashd start`
+Drop coincoind.conf in /etc/init.  Test by running `service coincoind start`
 it will automatically start on reboot.
 
 NOTE: This script is incompatible with CentOS 5 and Amazon Linux 2014 as they
@@ -101,22 +101,22 @@ use old versions of Upstart and do not supply the start-stop-daemon utility.
 
 4d) CentOS
 
-Copy geekcashd.init to /etc/init.d/geekcashd. Test by running `service geekcashd start`.
+Copy coincoind.init to /etc/init.d/coincoind. Test by running `service coincoind start`.
 
-Using this script, you can adjust the path and flags to the geekcashd program by
-setting the GEEKCASHD and FLAGS environment variables in the file
-/etc/sysconfig/geekcashd. You can also use the DAEMONOPTS environment variable here.
+Using this script, you can adjust the path and flags to the coincoind program by
+setting the coincoind and FLAGS environment variables in the file
+/etc/sysconfig/coincoind. You can also use the DAEMONOPTS environment variable here.
 
 4e) Mac OS X
 
-Copy org.geekcash.geekcashd.plist into ~/Library/LaunchAgents. Load the launch agent by
-running `launchctl load ~/Library/LaunchAgents/org.geekcash.geekcashd.plist`.
+Copy org.coincoin.coincoind.plist into ~/Library/LaunchAgents. Load the launch agent by
+running `launchctl load ~/Library/LaunchAgents/org.coincoin.coincoind.plist`.
 
-This Launch Agent will cause geekcashd to start whenever the user logs in.
+This Launch Agent will cause coincoind to start whenever the user logs in.
 
-NOTE: This approach is intended for those wanting to run geekcashd as the current user.
-You will need to modify org.geekcash.geekcashd.plist if you intend to use it as a
-Launch Daemon with a dedicated geekcash user.
+NOTE: This approach is intended for those wanting to run coincoind as the current user.
+You will need to modify org.coincoin.coincoind.plist if you intend to use it as a
+Launch Daemon with a dedicated coincoin user.
 
 5. Auto-respawn
 -----------------------------------

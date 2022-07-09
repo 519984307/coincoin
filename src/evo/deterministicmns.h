@@ -1,10 +1,11 @@
 // Copyright (c) 2018 The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2022      The CoinCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GEEKCASH_DETERMINISTICMNS_H
-#define GEEKCASH_DETERMINISTICMNS_H
+#ifndef COINCOIN_DETERMINISTICMNS_H
+#define COINCOIN_DETERMINISTICMNS_H
 
 #include "arith_uint256.h"
 #include "bls/bls.h"
@@ -496,4 +497,4 @@ private:
 
 extern CDeterministicMNManager* deterministicMNManager;
 
-#endif //GEEKCASH_DETERMINISTICMNS_H
+#endif //COINCOIN_DETERMINISTICMNS_H

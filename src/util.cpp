@@ -2,11 +2,12 @@
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2022      The CoinCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/geekcash-config.h"
+#include "config/coincoin-config.h"
 #endif
 
 #include "util.h"
@@ -110,7 +111,7 @@ namespace boost {
 
 
 
-//GeekCash only features
+//CoinCoin only features
 bool fMasternodeMode = false;
 bool fLiteMode = false;
 /**
@@ -123,7 +124,7 @@ bool fLiteMode = false;
 int nWalletBackups = 10;
 
 const char * const BITCOIN_CONF_FILENAME = "coincoin.conf";
-const char * const BITCOIN_PID_FILENAME = "geekcashd.pid";
+const char * const BITCOIN_PID_FILENAME = "coincoind.pid";
 
 CCriticalSection cs_args;
 std::map<std::string, std::string> mapArgs;
@@ -279,8 +280,8 @@ bool LogAcceptCategory(const char* category)
                 const std::vector<std::string>& categories = mapMultiArgs.at("-debug");
                 ptrCategory.reset(new std::set<std::string>(categories.begin(), categories.end()));
                 // thread_specific_ptr automatically deletes the set when the thread ends.
-                // "geekcash" is a composite category enabling all GeekCash-related debug output
-                if(ptrCategory->count(std::string("geekcash"))) {
+                // "coincoin" is a composite category enabling all CoinCoin-related debug output
+                if(ptrCategory->count(std::string("coincoin"))) {
                     ptrCategory->insert(std::string("privatesend"));
                     ptrCategory->insert(std::string("instantsend"));
                     ptrCategory->insert(std::string("masternode"));
@@ -537,7 +538,7 @@ static std::string FormatException(const std::exception* pex, const char* pszThr
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "geekcash";
+    const char* pszModule = "coincoin";
 #endif
     if (pex)
         return strprintf(
@@ -557,13 +558,13 @@ void PrintExceptionContinue(const std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\GeekCash
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\GeekCash
-    // Mac: ~/Library/Application Support/GeekCash
-    // Unix: ~/.geekcash
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\CoinCoin
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\CoinCoin
+    // Mac: ~/Library/Application Support/CoinCoin
+    // Unix: ~/.coincoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "GeekCash";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "CoinCoin";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -573,10 +574,10 @@ boost::filesystem::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // Mac
-    return pathRet / "Library/Application Support/GeekCash";
+    return pathRet / "Library/Application Support/CoinCoin";
 #else
     // Unix
-    return pathRet / ".geekcash";
+    return pathRet / ".coincoin";
 #endif
 #endif
 }

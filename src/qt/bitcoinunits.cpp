@@ -1,6 +1,7 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2022      The CoinCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -20,9 +21,9 @@ BitcoinUnits::BitcoinUnits(QObject *parent):
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(GEEK);
-    unitlist.append(mGEEK);
-    unitlist.append(uGEEK);
+    unitlist.append(COIN);
+    unitlist.append(mCOIN);
+    unitlist.append(uCOIN);
     unitlist.append(duffs);
     return unitlist;
 }
@@ -31,9 +32,9 @@ bool BitcoinUnits::valid(int unit)
 {
     switch(unit)
     {
-    case GEEK:
-    case mGEEK:
-    case uGEEK:
+    case COIN:
+    case mCOIN:
+    case uCOIN:
     case duffs:
         return true;
     default:
@@ -47,9 +48,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case GEEK: return QString("GEEK");
-            case mGEEK: return QString("mGEEK");
-            case uGEEK: return QString::fromUtf8("μGEEK");
+            case COIN: return QString("COIN");
+            case mCOIN: return QString("mCOIN");
+            case uCOIN: return QString::fromUtf8("μCOIN");
             case duffs: return QString("duffs");
             default: return QString("???");
         }
@@ -58,9 +59,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case GEEK: return QString("tGEEK");
-            case mGEEK: return QString("mtGEEK");
-            case uGEEK: return QString::fromUtf8("μtGEEK");
+            case COIN: return QString("tCOIN");
+            case mCOIN: return QString("mtCOIN");
+            case uCOIN: return QString::fromUtf8("μtCOIN");
             case duffs: return QString("tduffs");
             default: return QString("???");
         }
@@ -73,10 +74,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case GEEK: return QString("GeekCash");
-            case mGEEK: return QString("Milli-GeekCash (1 / 1" THIN_SP_UTF8 "000)");
-            case uGEEK: return QString("Micro-GeekCash (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-GeekCash (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case COIN: return QString("CoinCoin");
+            case mCOIN: return QString("Milli-CoinCoin (1 / 1" THIN_SP_UTF8 "000)");
+            case uCOIN: return QString("Micro-CoinCoin (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case duffs: return QString("Ten Nano-CoinCoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -84,10 +85,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case GEEK: return QString("TestGeekCashs");
-            case mGEEK: return QString("Milli-TestGeekCash (1 / 1" THIN_SP_UTF8 "000)");
-            case uGEEK: return QString("Micro-TestGeekCash (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-TestGeekCash (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case COIN: return QString("TestCoinCoin");
+            case mCOIN: return QString("Milli-TestCoinCoin (1 / 1" THIN_SP_UTF8 "000)");
+            case uCOIN: return QString("Micro-TestCoinCoin (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case duffs: return QString("Ten Nano-TestCoinCoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -97,9 +98,9 @@ qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case GEEK:  return 100000000;
-    case mGEEK: return 100000;
-    case uGEEK: return 100;
+    case COIN:  return 100000000;
+    case mCOIN: return 100000;
+    case uCOIN: return 100;
     case duffs: return 1;
     default:   return 100000000;
     }
@@ -109,9 +110,9 @@ int BitcoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case GEEK: return 8;
-    case mGEEK: return 5;
-    case uGEEK: return 2;
+    case COIN: return 8;
+    case mCOIN: return 5;
+    case uCOIN: return 2;
     case duffs: return 0;
     default: return 0;
     }

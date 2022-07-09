@@ -4,10 +4,10 @@ TOPDIR=${TOPDIR:-$(git rev-parse --show-toplevel)}
 SRCDIR=${SRCDIR:-$TOPDIR/src}
 MANDIR=${MANDIR:-$TOPDIR/doc/man}
 
-BITCOIND=${BITCOIND:-$SRCDIR/geekcashd}
-BITCOINCLI=${BITCOINCLI:-$SRCDIR/geekcash-cli}
-BITCOINTX=${BITCOINTX:-$SRCDIR/geekcash-tx}
-BITCOINQT=${BITCOINQT:-$SRCDIR/qt/geekcash-qt}
+BITCOIND=${BITCOIND:-$SRCDIR/coincoind}
+BITCOINCLI=${BITCOINCLI:-$SRCDIR/coincoin-cli}
+BITCOINTX=${BITCOINTX:-$SRCDIR/coincoin-tx}
+BITCOINQT=${BITCOINQT:-$SRCDIR/qt/coincoin-qt}
 
 [ ! -x $BITCOIND ] && echo "$BITCOIND not found or not executable." && exit 1
 

@@ -1,11 +1,11 @@
 Benchmarking
 ============
 
-GeekCash has an internal benchmarking framework, with benchmarks
+CoinCoin has an internal benchmarking framework, with benchmarks
 for cryptographic algorithms such as SHA1, SHA256, SHA512 and RIPEMD160. As well as the rolling bloom filter.
 
-After compiling GeekCash, the benchmarks can be run with:
-`src/bench/bench_geekcash`
+After compiling CoinCoin, the benchmarks can be run with:
+`src/bench/bench_coincoin`
 
 The output will look similar to:
 ```

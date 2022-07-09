@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between geekcash-cli and geekcashd)
- * of a given instance of the GeekCash system.
+ * CBaseChainParams defines the base parameters (shared between coincoin-cli and coincoind)
+ * of a given instance of the CoinCoin system.
  */
 class CBaseChainParams
 {

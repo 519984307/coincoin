@@ -1,0 +1,6 @@
+usr/local/bin/coincoin-qt usr/bin
+share/pixmaps/logo32.xpm usr/share/pixmaps
+share/pixmaps/logo16.xpm usr/share/pixmaps
+share/pixmaps/logo28.png usr/share/pixmaps
+debian/coincoin-qt.desktop usr/share/applications
+debian/coincoin-qt.protocol usr/share/kde4/services/

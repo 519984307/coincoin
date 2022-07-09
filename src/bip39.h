@@ -21,8 +21,8 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef GEEKCASH_BIP39_H
-#define GEEKCASH_BIP39_H
+#ifndef COINCOIN_BIP39_H
+#define COINCOIN_BIP39_H
 
 #include "support/allocators/secure.h"
 

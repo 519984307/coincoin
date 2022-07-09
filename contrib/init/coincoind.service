@@ -1,0 +1,22 @@
+[Unit]
+Description=CoinCoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=coincoin
+Group=coincoin
+
+Type=forking
+PIDFile=/var/lib/coincoind/coincoind.pid
+ExecStart=/usr/bin/coincoind -daemon -pid=/var/lib/coincoind/coincoind.pid \
+-conf=/etc/coincoin/coincoin.conf -datadir=/var/lib/coincoind -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
