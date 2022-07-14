@@ -55,8 +55,8 @@ static const int MAX_URI_LENGTH = 255;
 
 #define QAPP_ORG_NAME "CoinCoin"
 #define QAPP_ORG_DOMAIN "blezegeek.com"
-#define QAPP_APP_NAME_DEFAULT "CoinCoin-Qt"
-#define QAPP_APP_NAME_TESTNET "CoinCoin-Qt-testnet"
-#define QAPP_APP_NAME_DEVNET "CoinCoin-Qt-%s"
+#define QAPP_APP_NAME_DEFAULT "coincoin-qt"
+#define QAPP_APP_NAME_TESTNET "coincoin-qt-testnet"
+#define QAPP_APP_NAME_DEVNET "coincoin-qt-%s"
 
 #endif // BITCOIN_QT_GUICONSTANTS_H

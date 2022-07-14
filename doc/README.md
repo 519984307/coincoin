@@ -1,4 +1,4 @@
-CoinCoin 0.0.0-rc2.0
+CoinCoin 1.3.0.1
 =====================
 
 This is the official reference wallet for CoinCoin digital currency and comprises the backbone of the CoinCoin peer-to-peer network. You can [download CoinCoin](https://www.blazegeek.com/downloads/) or [build it yourself](#building) using the guides below.

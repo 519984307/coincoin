@@ -60,7 +60,7 @@ void ThreadSendAlert(CConnman& connman)
     alert.strStatusBar  = "URGENT: Upgrade required: see https://www.blazegeek.com";
 
     // Set specific client version/versions here. If setSubVer is empty, no filtering on subver is done:
-    // alert.setSubVer.insert(std::string("/CoinCoin:0.0.0-rc2.0/"));
+    // alert.setSubVer.insert(std::string("/CoinCoin:1.3.0.1/"));
 
     // Sign
     if(!alert.Sign())

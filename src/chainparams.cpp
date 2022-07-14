@@ -263,7 +263,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x6d87016979d2f369dcb5fc3a5c284be1a316790cbaabfcce403d24da4b49b210"));
 
 
-        vSeeds.push_back(CDNSSeedData("blazegeek.com", "ns01.blazegeek.com"));
+        /*vSeeds.push_back(CDNSSeedData("blazegeek.com", "ns01.blazegeek.com"));
         vSeeds.push_back(CDNSSeedData("blazegeek.com", "ns02.blazegeek.com"));
         vSeeds.push_back(CDNSSeedData("blazegeek.com", "ns03.blazegeek.com"));
         vSeeds.push_back(CDNSSeedData("blazegeek.com", "ns04.blazegeek.com"));
@@ -273,6 +273,7 @@ public:
         vSeeds.push_back(CDNSSeedData("blazegeek.com", "ns08.blazegeek.com"));
         vSeeds.push_back(CDNSSeedData("blazegeek.com", "ns09.blazegeek.com"));
         vSeeds.push_back(CDNSSeedData("blazegeek.com", "ns10.blazegeek.com"));
+        */
 
        // CoinCoin addresses start with 'G'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,38);
@@ -420,8 +421,8 @@ public:
 
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.push_back(CDNSSeedData("testnet.blazegeek.com",  "ns01.testnet.blazegeek.com"));
-        vSeeds.push_back(CDNSSeedData("testnet.blazegeek.com",  "ns02.testnet.blazegeek.com"));
+        //vSeeds.push_back(CDNSSeedData("testnet.blazegeek.com",  "ns01.testnet.blazegeek.com"));
+        //vSeeds.push_back(CDNSSeedData("testnet.blazegeek.com",  "ns02.testnet.blazegeek.com"));
 
         // CoinCoin addresses start with 'G'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,38);
@@ -565,8 +566,8 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("dev.blazegeek.com",  "ns01.dev.blazegeek.com"));
-        vSeeds.push_back(CDNSSeedData("dev.blazegeek.com",  "ns02.dev.blazegeek.com"));
+        //vSeeds.push_back(CDNSSeedData("dev.blazegeek.com",  "ns01.dev.blazegeek.com"));
+        //vSeeds.push_back(CDNSSeedData("dev.blazegeek.com",  "ns02.dev.blazegeek.com"));
 
         // CoinCoin addresses start with 'G'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,38);

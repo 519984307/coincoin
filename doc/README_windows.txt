@@ -1,4 +1,4 @@
-CoinCoin 0.0.0-rc2.0
+CoinCoin 1.3.0.1
 =====================
 
 Intro
